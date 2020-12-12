@@ -2,14 +2,14 @@ import React from 'react';
 import UserItem from './UserItem';
 import Spinner from '../layouts/Spinner';
 
-const Users = ({ books, loading }) => {
+const Users = ({ lists, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div style={userStyle}>
-        {books.map((book) => (
-          <UserItem key={book.isbns.isbn10} book={book} />
+        {lists.map((list) => (
+          <UserItem key={list.list_name_encoded} list={list} />
         ))}
       </div>
     );
